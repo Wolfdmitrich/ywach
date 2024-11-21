@@ -2623,7 +2623,7 @@ Tab:AddButton(
     {
         Name = "World Breaker",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("World Breaker").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("World Breaker").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2632,7 +2632,7 @@ Tab:AddButton(
     {
         Name = "North Tenchi Kaijin",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("North Tenchi Kaijin").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("North Tenchi Kaijin").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2641,7 +2641,7 @@ Tab:AddButton(
     {
         Name = "West Zanjitsu Gokui",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("West Zanjitsu Gokui").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("West Zanjitsu Gokui").LocalScript.Event:FireServer()
         end
     }
 )
