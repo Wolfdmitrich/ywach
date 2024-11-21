@@ -2851,7 +2851,7 @@ Tab:AddDropdown({
         "Gojo Young", "Yuji Itadori", "Toji Fushiguro", "Denji", "Goku Black", "Muichiro Tokito", "Akaza", "Zenitsu Agatsuma",
         "Kamado Tanjiro", "Kyojuro Rengoku", "Garou", "Giyu Tomioka", "Saitama", "Gyutaro", "Sakuya Izayoi", "Gojo Satoru", "Goku Ultra",
         "Roronoa Zoro", "Yuta Okkotsu", "MK D Luffy", "Cid Kagenou", "Kenjaku", "Vergil", "Megumi Fushiguro", "Green Hero",
-        "Asta", "Kinji Hakari", "Ichigo Vasto Lorde", "Ayanokoji Kiyotaka", "Sano Manjiro", "Kurosaki Ichigo", "Mahito", "Sosuke Aizen", "Ryomen Sukuna", "Todo Aoi", "Toge Inumaki"
+        "Asta", "Kinji Hakari", "Ichigo Vasto Lorde", "Ayanokoji Kiyotaka", "Sano Manjiro", "Kurosaki Ichigo", "Mahito", "Sosuke Aizen", "Ryomen Sukuna", "Todo Aoi", "Toge Inumaki", "Kuchiki Byakuya", "Yamamoto Genryusai", "Yhwach"
     },
     Callback = function(Value)
             local args = { Value }
