@@ -2614,7 +2614,7 @@ Tab:AddButton(
     {
         Name = "Bankai: Zanka no Tachi",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character.Bankai.LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack.Bankai.LocalScript.Event:FireServer()
         end
     }
 )
