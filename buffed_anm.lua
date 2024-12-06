@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 
 local Window = OrionLib:MakeWindow({Name = "Budgie Hub | AnM battlegrounds", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest", IntroText = "Budgie Hub", IntroIcon = "rbxassetid://16336200609"})
 
@@ -2714,6 +2714,7 @@ Tab:AddButton(
 )
 
 
+
 local Section = Tab:AddSection({
  Name = "Aizen V2 (TYBW)"
 })
@@ -2780,6 +2781,390 @@ Tab:AddButton(
         end
     }
 )
+
+local Section = Tab:AddSection({
+ Name = "Vergil V2 (I am that storm that is approaching..)"
+})
+
+Tab:AddButton(
+    {
+        Name = "Kageoni",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character.Kageoni.LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Slash Barrage",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Slash Barrage").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Upper Slash",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Upper Slash").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Aerial Slash",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Aerial Slash").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Judgment Cut",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Judgement Cut").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Rapid Slash",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rapid Slash").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Void Slash",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Slash").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Garganta Slash (opens portal to Hueco Mundo)",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Garganta Slash").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "My power should be absolute... JUDGMENT CUT END",
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Judgement Cut End").LocalScript.Event:FireServer()
+        end
+    }
+)
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Yhwach",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+ Name = "Yhwach"
+})
+
+local abilities = {
+    {Name = "Blut Vene Aufheben", ScriptPath = '["Blut Vene Aufheben"]'},
+    {Name = "Sklaverei", ScriptPath = ".Sklaverei"},
+    {Name = "Sankt Zwinger", ScriptPath = '["Sankt  Zwinger"]'},
+    {Name = "Auswahlen", ScriptPath = "[utf8.char(65, 117, 115, 119, 228, 104, 108, 101, 110)]"},
+    {Name = "The Almighty", ScriptPath = '["The Almighty"]'},
+    {Name = "Yamamoto Slash", ScriptPath = '["Yamamoto Slash"]'},
+    {Name = "Splash Almighty", ScriptPath = '["Splash Almighty"]'}
+}
+
+-- Добавляем выпадающий список для выбора способности
+Tab:AddDropdown({
+    Name = "Выберите способность",
+    Options = (function()
+        local options = {}
+        for _, ability in ipairs(abilities) do
+            table.insert(options, ability.Name)
+        end
+        return options
+    end)(),
+    Callback = function(selectedAbilityName)
+        local selectedAbility = nil
+        for _, ability in ipairs(abilities) do
+            if ability.Name == selectedAbilityName then
+                selectedAbility = ability
+                break
+            end
+        end
+
+        if selectedAbility then
+            -- Выпадающий список для выбора действия
+            Tab:AddDropdown({
+                Name = "Выберите действие",
+                Options = {"Использовать", "Выдать инструмент"},
+                Callback = function(action)
+                    if action == "Использовать" then
+                        -- Использование способности
+                        local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. ".LocalScript.Event:FireServer()"
+                        loadstring(scriptPath)()
+                    elseif action == "Выдать инструмент" then
+                        -- Создание и выдача инструмента
+                        local tool = Instance.new("Tool")
+                        tool.Name = selectedAbility.Name
+                        tool.RequiresHandle = false
+                        tool.Activated:Connect(function()
+                            local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. ".LocalScript.Event:FireServer()"
+                            loadstring(scriptPath)()
+                        end)
+                        tool.Parent = game:GetService("Players").LocalPlayer.Backpack
+                    end
+                end
+            })
+        end
+    end
+})
+
+local Tab = Window:MakeTab({
+	Name = "Aizen TYBW (v2)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+ Name = "Aizen V2 (TYBW)"
+})
+
+local abilities = {
+    {Name = "Reiatsu", ScriptPath = ".Reiatsu"},
+    {Name = "Spiritual Pressure", ScriptPath = '["Spiritual Pressure"]'},
+    {Name = "Hado 90", ScriptPath = "[utf8.char(72, 97, 100, 333, 32, 57, 48)]"},
+    {Name = "Awakening / Hogyoku Fusion", ScriptPath = ':FindFirstChild("Unstealed")'},
+    {Name = "Diamond Field", IsReplicatedStorage = true, RemotePath = "Aizen.RemoteEvent"},
+    {Name = "Hado 90: Kurohitsgi", ScriptPath = "[utf8.char(72, 97, 100, 333, 32, 57, 48, 58, 32, 75, 117, 114, 111, 104, 105, 116, 115, 117, 103, 105)]"},
+    {Name = "Hado 99: Goryutenmetsu", ScriptPath = "[utf8.char(72, 97, 100, 333, 32, 57, 57, 58, 32, 71, 111, 114, 121, 117, 116, 101, 110, 109, 101, 116, 115, 117)]"}
+}
+
+-- Добавляем выпадающий список для выбора способности
+Tab:AddDropdown({
+    Name = "Выберите способность",
+    Options = (function()
+        local options = {}
+        for _, ability in ipairs(abilities) do
+            table.insert(options, ability.Name)
+        end
+        return options
+    end)(),
+    Callback = function(selectedAbilityName)
+        local selectedAbility = nil
+        for _, ability in ipairs(abilities) do
+            if ability.Name == selectedAbilityName then
+                selectedAbility = ability
+                break
+            end
+        end
+
+        if selectedAbility then
+            -- Выпадающий список для выбора действия
+            Tab:AddDropdown({
+                Name = "Выберите действие",
+                Options = {"Использовать", "Выдать инструмент"},
+                Callback = function(action)
+                    if action == "Использовать" then
+                        if selectedAbility.IsReplicatedStorage then
+                            -- Выполнение через ReplicatedStorage
+                            game:GetService("ReplicatedStorage")[selectedAbility.RemotePath]:FireServer()
+                        else
+                            -- Выполнение через Backpack
+                            local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. ".LocalScript.Event:FireServer()"
+                            loadstring(scriptPath)()
+                        end
+                    elseif action == "Выдать инструмент" then
+                        -- Создание и выдача инструмента
+                        local tool = Instance.new("Tool")
+                        tool.Name = selectedAbility.Name
+                        tool.RequiresHandle = false
+                        tool.Activated:Connect(function()
+                            if selectedAbility.IsReplicatedStorage then
+                                -- Выполнение через ReplicatedStorage
+                                game:GetService("ReplicatedStorage")[selectedAbility.RemotePath]:FireServer()
+                            else
+                                -- Выполнение через Backpack
+                                local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. ".LocalScript.Event:FireServer()"
+                                loadstring(scriptPath)()
+                            end
+                        end)
+                        tool.Parent = game:GetService("Players").LocalPlayer.Backpack
+                    end
+                end
+            })
+        end
+    end
+})
+
+local Tab = Window:MakeTab({
+	Name = "Yamamoto Genryusai",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+ Name = "Yamamoto Genryusai"
+})
+
+local abilities = {
+    {Name = "Reiatsu", ScriptPath = ".Reiatsu"},
+    {Name = "Ryujin Jakka", ScriptPath = ':FindFirstChild("Ry\\197\\171jin Jakka")'},
+    {Name = "Hado 96: Ittokaso", ScriptPath = ':FindFirstChild("Had\\197\\141 96: Ittokaso")'},
+    {Name = "Bankai: Zanka no Tachi", ScriptPath = ".Bankai"},
+    {Name = "World Breaker", ScriptPath = ':FindFirstChild("World Breaker")'},
+    {Name = "North Tenchi Kaijin", ScriptPath = ':FindFirstChild("North Tenchi Kaijin")'},
+    {Name = "West Zanjitsu Gokui", ScriptPath = ':FindFirstChild("West Zanjitsu Gokui")'}
+}
+
+-- Добавляем выпадающий список для выбора способности
+Tab:AddDropdown({
+    Name = "Выберите способность",
+    Options = (function()
+        local options = {}
+        for _, ability in ipairs(abilities) do
+            table.insert(options, ability.Name)
+        end
+        return options
+    end)(),
+    Callback = function(selectedAbilityName)
+        local selectedAbility = nil
+        for _, ability in ipairs(abilities) do
+            if ability.Name == selectedAbilityName then
+                selectedAbility = ability
+                break
+            end
+        end
+
+        if selectedAbility then
+            -- Выпадающий список для выбора действия
+            Tab:AddDropdown({
+                Name = "Выберите действие",
+                Options = {"Использовать", "Выдать инструмент"},
+                Callback = function(action)
+                    if action == "Использовать" then
+                        -- Использование способности
+                        local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. ".LocalScript.Event:FireServer()"
+                        loadstring(scriptPath)()
+                    elseif action == "Выдать инструмент" then
+                        -- Создание и выдача инструмента
+                        local tool = Instance.new("Tool")
+                        tool.Name = selectedAbility.Name
+                        tool.RequiresHandle = false
+                        tool.Activated:Connect(function()
+                            local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. ".LocalScript.Event:FireServer()"
+                            loadstring(scriptPath)()
+                        end)
+                        tool.Parent = game:GetService("Players").LocalPlayer.Backpack
+                    end
+                end
+            })
+        end
+    end
+})
+
+local Tab = Window:MakeTab({
+	Name = "Coyote Starrk",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+ Name = "Coyote Starrk"
+})
+
+local abilities = {
+    {Name = "Powerful Flash Barrage", ScriptPath = '["Flash Barrage"]', IsLoop = true},
+    {Name = "Powerful Flash Cleave", ScriptPath = '["Flash Cleave"]', IsLoop = true},
+    {Name = "Powerful Sonido Clones", ScriptPath = '["Sonido Clones"]', IsLoop = true},
+    {Name = "Powerful Chest Cero", ScriptPath = '["Chest Cero"]', IsLoop = true},
+    {Name = "Sonido", IsReplicatedStorage = true, RemotePath = "Remotes.sonido"},
+    {Name = "Garganta", ScriptPath = ".Garganta"},
+    {Name = "Awakening", ScriptPath = "[utf8.char(82,101,115,117,114,114,101,99,99,105,243,110,58,32,32,76,111,115,32,76,111,98,111,115)]"},
+    {Name = "Powerful Los Lobos", ScriptPath = '["Los Lobos"]', IsLoop = true},
+    {Name = "Powerful Colmilo", ScriptPath = ".Colmilo", IsLoop = true},
+    {Name = "Powerful Right Gun", ScriptPath = '["Right Gun"]', IsLoop = true},
+    {Name = "Powerful Sonido Cero", ScriptPath = '["Sonido Cero"]', IsLoop = true, EventPath = ".event"},
+    {Name = "Powerful Spinning Shots", ScriptPath = '["Spinning Shots"]', IsLoop = true},
+    {Name = "Powerful Wolves", ScriptPath = ".Wolves['Divine Dogs']", IsLoop = true, EventType = "RemoteEvent"},
+    {Name = "Cero Metralleta", ScriptPath = '["Cero Metralleta"]'}
+}
+
+Tab:AddDropdown({
+    Name = "Выберите способность",
+    Options = (function()
+        local options = {}
+        for _, ability in ipairs(abilities) do
+            table.insert(options, ability.Name)
+        end
+        return options
+    end)(),
+    Callback = function(selectedAbilityName)
+        local selectedAbility = nil
+        for _, ability in ipairs(abilities) do
+            if ability.Name == selectedAbilityName then
+                selectedAbility = ability
+                break
+            end
+        end
+
+        if selectedAbility then
+            Tab:AddDropdown({
+                Name = "Выберите действие",
+                Options = {"Использовать", "Выдать инструмент"},
+                Callback = function(action)
+                    if action == "Использовать" then
+                        if selectedAbility.IsReplicatedStorage then
+                            -- Выполнение через ReplicatedStorage
+                            game:GetService("ReplicatedStorage")[selectedAbility.RemotePath]:FireServer()
+                        else
+                            -- Выполнение через Backpack
+                            if selectedAbility.IsLoop then
+                                for i = 1, 1 do
+                                    local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. (selectedAbility.EventPath or ".LocalScript.Event") .. ":FireServer()"
+                                    loadstring(scriptPath)()
+                                end
+                            else
+                                local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. (selectedAbility.EventPath or ".LocalScript.Event") .. ":FireServer()"
+                                loadstring(scriptPath)()
+                            end
+                        end
+                    elseif action == "Выдать инструмент" then
+                        -- Создание и выдача инструмента
+                        local tool = Instance.new("Tool")
+                        tool.Name = selectedAbility.Name
+                        tool.RequiresHandle = false
+                        tool.Activated:Connect(function()
+                            if selectedAbility.IsReplicatedStorage then
+                                game:GetService("ReplicatedStorage")[selectedAbility.RemotePath]:FireServer()
+                            else
+                                local scriptPath = "game:GetService('Players').LocalPlayer.Backpack" .. selectedAbility.ScriptPath .. (selectedAbility.EventPath or ".LocalScript.Event") .. ":FireServer()"
+                                loadstring(scriptPath)()
+                            end
+                        end)
+                        tool.Parent = game:GetService("Players").LocalPlayer.Backpack
+                    end
+                end
+            })
+        end
+    end
+})
+
 
 local Tab = Window:MakeTab({
 	Name = "Options",
