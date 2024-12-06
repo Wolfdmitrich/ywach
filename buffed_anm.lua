@@ -2790,7 +2790,7 @@ Tab:AddButton(
     {
         Name = "Kageoni",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character.Kageoni.LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack.Kageoni.LocalScript.Event:FireServer()
         end
     }
 )
@@ -2799,7 +2799,7 @@ Tab:AddButton(
     {
         Name = "Slash Barrage",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Slash Barrage").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Slash Barrage").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2808,7 +2808,7 @@ Tab:AddButton(
     {
         Name = "Upper Slash",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Upper Slash").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Upper Slash").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2817,7 +2817,7 @@ Tab:AddButton(
     {
         Name = "Aerial Slash",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Aerial Slash").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Aerial Slash").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2826,7 +2826,7 @@ Tab:AddButton(
     {
         Name = "Judgment Cut",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Judgement Cut").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Judgement Cut").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2835,7 +2835,7 @@ Tab:AddButton(
     {
         Name = "Rapid Slash",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rapid Slash").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rapid Slash").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2844,7 +2844,7 @@ Tab:AddButton(
     {
         Name = "Void Slash",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Slash").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Void Slash").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2853,7 +2853,7 @@ Tab:AddButton(
     {
         Name = "Garganta Slash (opens portal to Hueco Mundo)",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Garganta Slash").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Garganta Slash").LocalScript.Event:FireServer()
         end
     }
 )
@@ -2862,7 +2862,7 @@ Tab:AddButton(
     {
         Name = "My power should be absolute... JUDGMENT CUT END",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild("Judgement Cut End").LocalScript.Event:FireServer()
+            game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Judgement Cut End").LocalScript.Event:FireServer()
         end
     }
 )
